@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <h3>Thêm khóa học mới</h3>
+
+    <form method="POST" action="/courses/store">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group  mt-2">
+            <label for="shortname">Short name</label>
+            <input type="text" class="form-control" id="shortname" name="shortname">
+        </div>
+        <div class="form-group  mt-2">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+        <div class="form-group mt-2">
+            <label for="videoId">Video ID</label>
+            <input type="text" class="form-control" id="videoId" name="videoId">
+        </div>
+        <div class="form-group  mt-2">
+            <label for="image">Image URL</label>
+            <input type="text" class="form-control" id="image" name="image">
+        </div>
+        {{!-- <div class="form-group">
+            <label for="slug">Slug</label>
+            <input type="text" class="form-control" id="slug" name="slug">
+        </div> --}}
+
+        <button type="submit" class="mt-4 btn btn-primary">Add</button>
+    </form>
+</div>

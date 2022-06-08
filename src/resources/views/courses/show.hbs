@@ -1,0 +1,24 @@
+<div class="mt-4">
+    <div class="row">
+        <div class="col-lg-7 ">
+            <h2 class="course-name">{{course.name}}</h2>
+
+            <p>{{course.description}}</p>
+
+            
+            <button type="button" class="btn btn-warning"><a class="nav-link text-white" href="/wishlist/add/{{course._id}}">Add to favorites</a></button>
+        </div>
+
+        <div class="col-lg-5">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/{{course.videoId}}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+</div>
