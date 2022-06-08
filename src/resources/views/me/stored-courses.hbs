@@ -1,8 +1,8 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between">
         <div>
-            <h3>Danh sách khoá học</h3>
-            <a href="/me/trash/courses">Khoá học đã xoá</a>
+            <h3>Course List</h3>
+            <a href="/me/trash/courses">Recycle Bin</a>
         </div>
     </div>
 
@@ -11,6 +11,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Price</th>
                 <th scope="col">Created at</th>
                 <th scope="col" colspan="2">Video ID</th>
             </tr>
@@ -21,6 +22,7 @@
                 <tr>
                     <th scope="row">{{sum @index 1}}</th>
                     <td>{{this.name}}</td>
+                    <td>${{this.price}}</td>
                     <td>{{this.createdAt}}</td>
                     <td>{{this.videoId}}</td>
                     <td>
@@ -37,8 +39,8 @@
                 {{else}}
                 <tr>
                     <td colspan="5" class="text-center">
-                        Bạn chưa đăng khoá học nào.
-                        <a href="/courses/create">Đăng khoá học ngay!</a>
+                        You have not uploaded any courses yet.
+                        <a href="/courses/create">Upload now!</a>
                     </td>
                 </tr>
             {{/each}}

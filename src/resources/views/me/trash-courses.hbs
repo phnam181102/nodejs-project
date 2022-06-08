@@ -1,8 +1,8 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between">
         <div>
-            <a href="/me/stored/courses">Quay lại</a>
-            <h3>Khoá Học Đã Xoá</h3>
+            <a href="/me/stored/courses">Back</a>
+            <h3>Deleted courses</h3>
         </div>
 
     </div>
@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Price</th>
                 <th scope="col">Created at</th>
                 <th scope="col" colspan="2">Video ID</th>
             </tr>
@@ -22,10 +23,11 @@
                 <tr>
                     <th scope="row">{{sum @index 1}}</th>
                     <td>{{this.name}}</td>
+                    <td>${{this.price}}</td>
                     <td>{{this.createdAt}}</td>
                     <td>{{this.videoId}}</td>
                     <td>
-                        <a href="/courses/{{this._id}}/edit" class="btn btn-link">Restore</a>
+                        <a href="" class="btn btn-link btn-restore" data-bs-id="{{this._id}}">Restore</a>
                         <a
                             href=""
                             class="btn btn-link"
@@ -38,7 +40,7 @@
                 {{else}}
                 <tr>
                     <td colspan="5" class="text-center">
-                        Thùng rác trống 
+                        The trash is empty.
                     </td>
                 </tr>
             {{/each}}
@@ -66,7 +68,7 @@
                 >&times;</button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete this course?
+                Are you sure you want to permanently delete this course?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -76,14 +78,16 @@
     </div>
 </div>
 
-{{!-- Delete hidden form --}}
 <form method="POST" name="delete-course-form"></form>
+<form method="POST" name="restore-course-form"></form>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var courseId
         var deleteForm = document.forms["delete-course-form"]
+        var restoreForm = document.forms["restore-course-form"]
         var btnDeleteCourse = document.getElementById('btn-delete-course')
+        var restoreBtn = $('.btn-restore')
 
         var exampleModal = document.getElementById('delete-course-modal')
         exampleModal.addEventListener('show.bs.modal', function (event) { 
@@ -93,9 +97,18 @@
         )
 
         btnDeleteCourse.onclick = function (event) {
-            deleteForm.action = `/courses/${courseId}?_method=DELETE`
+            deleteForm.action = `/courses/${courseId}/delete?_method=DELETE`
             deleteForm.submit()
         }
+
+        // Restore btn clicked
+        restoreBtn.click(function(e) {
+            e.preventDefault()
+            var courseId = $(this).data('bsId')
+
+            restoreForm.action = `/courses/${courseId}/restore?_method=PATCH`
+            restoreForm.submit()
+        })
     })
 
 

@@ -8,6 +8,7 @@ module.exports = function Wishlist(oldWishlist) {
         }
     };
 
+
     this.generateArray = function () {
         var arr = [];
         for (var id in this.items) {

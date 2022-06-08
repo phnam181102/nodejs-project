@@ -1,40 +1,42 @@
-<div class="mt-4">
-    <h3>Cập nhật khóa học</h3>
+<div class="mt-4 row justify-content-center">
+    <div class="col-md-6">
+        <h3>Course Update</h3>
 
     <form class="mt-4" method="POST" action="/courses/{{course._id}}?_method=PUT">
-        <div class="form-group">
-            <label for="name">Name</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="name">Name</label>
             <input type="text" class="form-control" value="{{course.name}}" id="name" name="name" />
         </div>
-        <div class="form-group">
-            <label for="shortname">Short name</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="shortname">Short name</label>
             <input type="text" class="form-control" value="{{course.shortname}}" id="shortname" name="shortname" />
         </div>
-        <div class="form-group">
-            <label for="price">Price</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="price">Price</label>
             <input type="text" class="form-control" value="{{course.price}}" id="price" name="price" />
         </div>
-        <div class="form-group">
-            <label for="description">Description</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="description">Description</label>
             <textarea
                 class="form-control"
                 id="description"
                 name="description"
             >{{course.description}}</textarea>
         </div>
-        <div class="form-group">
-            <label for="videoId">Video ID</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="videoId">Video ID</label>
             <input type="text" class="form-control" value="{{course.videoId}}" id="videoId" name="videoId" />
         </div>
-        <div class="form-group">
-            <label for="image">Image URL</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="image">Image URL</label>
             <input type="text" class="form-control" value="{{course.image}}" id="image" name="image" />
         </div>
-        <div class="form-group">
-            <label for="slug">Slug</label>
+        <div class="form-group mt-2">
+            <label class="mb-1" for="slug">Slug</label>
             <input type="text" class="form-control" value="{{course.slug}}" id="slug" name="slug" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary mt-4">Save</button>
     </form>
+    </div>
 </div>
