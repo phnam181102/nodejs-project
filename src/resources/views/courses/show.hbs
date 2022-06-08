@@ -1,15 +1,26 @@
 <div class="mt-4">
     <div class="row">
-        <div class="col-lg-7 ">
+        <div class="col-lg-offset-7 col-md-6">
             <h2 class="course-name">{{course.name}}</h2>
 
             <p>{{course.description}}</p>
 
+            <div class="d-flex pt-2">
+            {{#if course.price}} 
+                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Buy Now ${{course.price}}
+                </a></button>
+            {{ else }}
+                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Free Course ${{course.price}}
+                </a></button>
+            {{/if}}
+
+                <a href="/wishlist/add/{{course._id}}"><ion-icon class="favorite-icon" name="heart-circle-outline"></ion-icon></a>
+            </div>
             
-            <button type="button" class="btn btn-warning"><a class="nav-link text-white" href="/wishlist/add/{{course._id}}">Add to favorites</a></button>
+           
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-offset-5 col-md-6">
             <iframe
                 width="560"
                 height="315"

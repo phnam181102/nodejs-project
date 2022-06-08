@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Poppins:wght@100;400;500;700&display=swap");
 body {
-  font-family: 'Poppins', sans-serif !important;
-  min-height: 40vh; }
+  font-family: 'Poppins', sans-serif !important; }
 
 .app > .container {
-  min-height: 43vh; }
+  min-height: 45vh; }
 
 header {
   box-shadow: rgba(101, 101, 110, 0.2) 0px 7px 29px 0px; }
@@ -55,8 +54,25 @@ header {
   font-weight: 700;
   margin-bottom: 2rem; }
 
+.price-btn {
+  background-color: #fa5616 !important;
+  max-height: 42px;
+  min-width: 120px; }
+  .price-btn:hover {
+    opacity: 0.9; }
+
 ion-icon {
   font-size: 22px; }
+
+.favorite-icon {
+  font-size: 45px;
+  color: #fa5616;
+  margin-left: 20px; }
+  .favorite-icon:hover {
+    opacity: 0.9; }
+
+a.text-white {
+  font-weight: 500; }
 
 .footer {
   margin-top: 48px;

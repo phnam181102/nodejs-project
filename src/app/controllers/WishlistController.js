@@ -13,7 +13,6 @@ class WishlistController {
             }
             wishlist.add(course, course.id);
             req.session.wishlist = wishlist;
-            console.log(req.session.wishlist);
             res.redirect("/wishlist/show");
         });
     }
