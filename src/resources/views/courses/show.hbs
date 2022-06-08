@@ -5,12 +5,17 @@
 
             <p>{{course.description}}</p>
 
+
+            <div class="price ">
+                <div class="d-flex align-items-center">${{course.price}} <ion-icon class="fire" name="flame"></ion-icon></div>
+                <p class="d-flex align-items-center"><ion-icon name="stopwatch-outline"></ion-icon> <strong>23 hours</strong>&nbsp left at this price!</p>
+            </div>
             <div class="d-flex pt-2">
             {{#if course.price}} 
-                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Buy Now ${{course.price}}
+                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Buy Now 
                 </a></button>
             {{ else }}
-                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Free Course ${{course.price}}
+                <button type="button" class="btn price-btn btn-warning"><a class="nav-link text-white" href="#">Get Free 
                 </a></button>
             {{/if}}
 
